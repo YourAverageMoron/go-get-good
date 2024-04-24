@@ -55,7 +55,16 @@ func (rb *RingBuffer[T]) Push(item T) {
 	rb.arr[index] = item
 	rb.tail++
 	rb.length++
+}
 
+func (rb *RingBuffer[T]) Pop() T{
+    if rb.length == 0 {
+        panic("Your array is empty")
+    }
+    item := rb.arr[getRelativeIndex(rb.tail -1, len(rb.arr))]
+    rb.tail --
+    rb.length --
+    return item
 }
 
 func (rb *RingBuffer[T]) Equeue(item T) {
@@ -66,4 +75,39 @@ func (rb *RingBuffer[T]) Equeue(item T) {
 	rb.arr[index] = item
 	rb.head--
 	rb.length++
+}
+
+
+func (rb *RingBuffer[T]) Dequeue() T {
+    if rb.length == 0 {
+        panic("Your array is empty")
+    }
+    item := rb.arr[getRelativeIndex(rb.head, len(rb.arr))]
+    rb.head ++
+    rb.length --
+    return item
+}
+
+
+
+func TestRingBuffer() {
+	rb := newRingBuffer[int](6)
+    rb.Push(7)
+    rb.Equeue(3)
+    rb.Equeue(3)
+    rb.Equeue(3)
+    rb.Equeue(3)
+    rb.Push(7)
+    fmt.Println(rb)
+    rb.Push(7)
+    fmt.Println(rb)
+
+    fmt.Println(rb.Pop())
+    fmt.Println(rb.Pop())
+    fmt.Println(rb.Pop())
+    fmt.Println(rb.Pop())
+    fmt.Println(rb.Pop())
+    fmt.Println(rb.Pop())
+    fmt.Println(rb.Pop())
+    fmt.Println(rb.Pop())
 }
