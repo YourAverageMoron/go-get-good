@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
+	"algorithms/amazeing"
 )
 
 func main() {
+
 	//CRYSTAL
 	// fmt.Println("Hello, World!")
 	// breaks := []bool{false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false}
@@ -50,15 +51,6 @@ func main() {
 	// fmt.Println(s.Pop())
 	// fmt.Println(s.Pop())
 	// fmt.Println(s.Pop())
-
-	rb := newRingBuffer[int](6)
-    rb.Push(7)
-    rb.Equeue(3)
-    rb.Equeue(3)
-    rb.Equeue(3)
-    rb.Equeue(3)
-    rb.Push(7)
-    fmt.Println(rb)
-    rb.Push(7)
-    fmt.Println(rb)
+	maze := amazeing.CreateMaze()
+    amazeing.SolveMaze(&maze)
 }
