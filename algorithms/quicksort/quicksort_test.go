@@ -2,12 +2,32 @@ package quicksort
 
 import (
 	"fmt"
+	"math/rand"
 	"testing"
+	"time"
 )
 
 func TestQuicksort(t *testing.T) {
-	arr := []int{12, 4, 45, 6, 8, 2, 13}
-	fmt.Println("Unsorted array:", arr)
-	Quicksort(arr)
-	fmt.Println("Sorted array:", arr)
+    /*
+    This lead to some interesting results
+    I expected the use of go
+    */
+	arr := []int{}
+    for i := 0; i < 20; i++{
+        randInt := rand.Intn(11)
+        arr = append(arr, randInt)
+    }
+    fmt.Println(arr)
+    start := time.Now()
+	QuicksortParallel(arr)
+    duration := time.Since(start)
+    fmt.Printf("Time Parallel- %v\n", duration)
+    fmt.Println(arr)
+    // startSingle := time.Now()
+	// Quicksort(arr)
+    // durationSingle := time.Since(startSingle)
+    // fmt.Printf("Time Single - %v\n", durationSingle)
+    //
+    // fmt.Println(arr)
+    // fmt.Println(arrParallel)
 }
