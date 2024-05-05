@@ -1,8 +1,5 @@
 package main
 
-import (
-	"algorithms/amazeing"
-)
 
 func main() {
 
@@ -51,6 +48,6 @@ func main() {
 	// fmt.Println(s.Pop())
 	// fmt.Println(s.Pop())
 	// fmt.Println(s.Pop())
-	maze := amazeing.CreateMaze()
-    amazeing.SolveMaze(&maze)
+	// maze := amazeing.CreateMaze()
+    // amazeing.SolveMaze(&maze)
 }
