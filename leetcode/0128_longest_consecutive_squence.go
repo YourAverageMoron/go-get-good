@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func LongestConsecutiveSequence(nums []int) int {
 	m := make(map[int]int)
 	maxL := 0
@@ -14,7 +12,6 @@ func LongestConsecutiveSequence(nums []int) int {
 		l := 1 + nextL + prevL
 		if l > maxL {
 			maxL = l
-			fmt.Println(n)
 		}
 		m[n] = l
 		m[n-prevL] = l
