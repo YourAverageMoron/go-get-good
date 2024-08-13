@@ -1,7 +1,49 @@
 package main
 
+import (
+	"algorithms/tree"
+	"fmt"
+)
+
+func createTree() *tree.Node {
+	lln := tree.Node{
+		Value: 3,
+	}
+	lrn := tree.Node{
+		Value: 4,
+	}
+	ln := tree.Node{
+		Value: 2,
+		Left:  &lln,
+		Right: &lrn,
+	}
+	rln := tree.Node{
+		Value: 6,
+	}
+	rrn := tree.Node{
+		Value: 7,
+	}
+	rn := tree.Node{
+		Value: 5,
+		Left:  &rln,
+		Right: &rrn,
+	}
+	root := tree.Node{
+		Value: 1,
+		Left:  &ln,
+		Right: &rn,
+	}
+	return &root
+}
+
+
+
 
 func main() {
+	root := createTree()
+	tree.BreadthFirstSearch(root, func(n *tree.Node) {
+        fmt.Println(n.Value)
+	})
 
 	//CRYSTAL
 	// fmt.Println("Hello, World!")
