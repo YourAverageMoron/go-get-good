@@ -2,9 +2,11 @@ package tree
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-func TestPreOrderTraverse(t *testing.T) {
+func createTree() *Node {
 	lln := Node{
 		value: 3,
 	}
@@ -32,5 +34,32 @@ func TestPreOrderTraverse(t *testing.T) {
 		left:  &ln,
 		right: &rn,
 	}
-	PreOrderTraverse(&root)
+	return &root
+}
+
+func TestPreOrderTraverse(t *testing.T) {
+	root := createTree()
+	arr := []int32{}
+	PreOrderTraverse(root, func(n *Node) {
+		arr = append(arr, n.value)
+	})
+	assert.Equal(t, []int32{1, 2, 3, 4, 5, 6, 7}, arr)
+}
+
+func TestInOrderTraverse(t *testing.T) {
+	root := createTree()
+	arr := []int32{}
+	InOrderTraverse(root, func(n *Node) {
+		arr = append(arr, n.value)
+	})
+	assert.Equal(t, []int32{3, 2, 4, 1, 6, 5, 7}, arr)
+}
+
+func TestPostOrderTraverse(t *testing.T) {
+	root := createTree()
+	arr := []int32{}
+	PostOrderTraverse(root, func(n *Node) {
+		arr = append(arr, n.value)
+	})
+	assert.Equal(t, []int32{3, 4, 2, 6, 7, 5, 1}, arr)
 }

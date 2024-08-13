@@ -1,7 +1,5 @@
 package tree
 
-import "fmt"
-
 type Node struct {
 	value  int32
 	left   *Node
@@ -9,16 +7,33 @@ type Node struct {
 	parent *Node
 }
 
-
-
-
-
-func PreOrderTraverse(n *Node) {
-	fmt.Println(n.value)
+func PreOrderTraverse(n *Node, f func(n *Node)) {
+	f(n)
 	if n.left != nil {
-		PreOrderTraverse(n.left)
+		PreOrderTraverse(n.left, f)
 	}
 	if n.right != nil {
-		PreOrderTraverse(n.right)
+		PreOrderTraverse(n.right, f)
 	}
+}
+
+
+func InOrderTraverse(n *Node, f func(n *Node)) {
+	if n.left != nil {
+		InOrderTraverse(n.left, f)
+	}
+	f(n)
+	if n.right != nil {
+		InOrderTraverse(n.right, f)
+	}
+}
+
+func PostOrderTraverse(n *Node, f func(n *Node)) {
+	if n.left != nil {
+		PostOrderTraverse(n.left, f)
+	}
+	if n.right != nil {
+		PostOrderTraverse(n.right, f)
+	}
+	f(n)
 }
