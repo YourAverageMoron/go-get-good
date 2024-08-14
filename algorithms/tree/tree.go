@@ -6,6 +6,12 @@ type Node struct {
 	Right *Node
 }
 
+func Equals(n1 *Node, n2 *Node) bool {
+	if n1 == nil || n2 == nil {
+		return n1 == n2
+	}
+	return n1.Value == n2.Value && Equals(n1.Left, n2.Left) && Equals(n1.Right, n2.Right)
+}
 
 func PreOrderTraverse(n *Node, f func(n *Node)) {
 	f(n)

@@ -64,7 +64,6 @@ func TestPostOrderTraverse(t *testing.T) {
 	assert.Equal(t, []int32{3, 4, 2, 6, 7, 5, 1}, arr)
 }
 
-
 func TestBFSTraverse(t *testing.T) {
 	root := createTree()
 	arr := []int32{}
@@ -72,4 +71,13 @@ func TestBFSTraverse(t *testing.T) {
 		arr = append(arr, n.Value)
 	})
 	assert.Equal(t, []int32{1, 2, 5, 3, 4, 6, 7}, arr)
+}
+
+func TestEquals(t *testing.T) {
+	root := createTree()
+	root2 := createTree()
+	equal := Equals(root, root2)
+	assert.Equal(t, true, equal)
+    notEqual := Equals(root, root2.Left)
+	assert.Equal(t, false, notEqual)
 }
