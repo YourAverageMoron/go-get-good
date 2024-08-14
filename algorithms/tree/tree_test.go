@@ -81,3 +81,24 @@ func TestEquals(t *testing.T) {
     notEqual := Equals(root, root2.Left)
 	assert.Equal(t, false, notEqual)
 }
+
+
+func TestBst(t *testing.T){
+    	root := &Node{
+		Value: 10,
+	}
+
+	BstInsert(&Node{Value: 5}, root)
+	BstInsert(&Node{Value: 19}, root)
+	BstInsert(&Node{Value: 7}, root)
+	BstInsert(&Node{Value: 3}, root)
+	arr := []int32{}
+	InOrderTraverse(root, func(n *Node) {
+		arr = append(arr, n.Value)
+	})
+	assert.Equal(t, []int32{3, 5, 7, 10, 19}, arr)
+
+    assert.True(t, BstSearch(7, root))
+    assert.True(t, !BstSearch(11, root))
+
+}

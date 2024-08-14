@@ -6,6 +6,7 @@ type Node struct {
 	Right *Node
 }
 
+
 func Equals(n1 *Node, n2 *Node) bool {
 	if n1 == nil || n2 == nil {
 		return n1 == n2
