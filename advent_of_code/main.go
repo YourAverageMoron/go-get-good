@@ -1,9 +1,9 @@
 package main
 
-import trebuchet "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_01_trebuchet"
-
-
+import (
+	cubeconundrum "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_02_cube_conundrum"
+)
 
 func main() {
-	trebuchet.Run()
+	cubeconundrum.Run()
 }
