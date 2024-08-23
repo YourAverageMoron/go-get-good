@@ -1,9 +1,9 @@
 package main
 
 import (
-	gearratios "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_03_gear_ratios"
+	scratchcards "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_04_scratchcards"
 )
 
 func main() {
-	gearratios.Run()
+	scratchcards.Solution1()
 }
