@@ -1,9 +1,9 @@
 package main
 
 import (
-	cubeconundrum "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_02_cube_conundrum"
+	gearratios "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_03_gear_ratios"
 )
 
 func main() {
-	cubeconundrum.Run()
+	gearratios.Run()
 }
