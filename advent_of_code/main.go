@@ -1,9 +1,9 @@
 package main
 
 import (
-	scratchcards "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_04_scratchcards"
+	trebuchet "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_01_trebuchet"
 )
 
 func main() {
-	scratchcards.Solution1()
+	trebuchet.Run()
 }
