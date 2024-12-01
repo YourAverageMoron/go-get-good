@@ -1,9 +1,7 @@
 package main
 
-import (
-	trebuchet "github.com/YourAverageMoron/go-get-good/advent_of_code/2023_01_trebuchet"
-)
+import historianhysteria "github.com/YourAverageMoron/go-get-good/advent_of_code/2024_01_historian_hysteria"
 
 func main() {
-	trebuchet.Run()
+	historianhysteria.Run()
 }
